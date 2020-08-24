@@ -2,11 +2,7 @@ var listTodos= document.querySelector('.list ul')
 var form_list= document.querySelector('.form-list input')
 var button_todos= document.querySelector('.form-list button')
 
-var todos= [
-   "Fazer café",
-   "Ligar para o pai",
-   "Fazer lista de compras"
-]
+var todos= JSON.parse(localStorage.getItem('list_todos')) || []
 
 function renderTodo(){
    listTodos.innerHTML=''
@@ -42,6 +38,7 @@ function addTodo(){
    
    form_list.value=''
    renderTodo()
+   saveToStorage()
 }
 
 button_todos.onclick= addTodo
@@ -50,4 +47,10 @@ button_todos.onclick= addTodo
 function excluirTodo(pos){
    todos.splice(pos, 1)
    renderTodo()
+   saveToStorage()
+}
+
+//Função para o armazenamento
+function saveToStorage(){
+   localStorage.setItem('list_todos', JSON.stringify(todos))
 }
