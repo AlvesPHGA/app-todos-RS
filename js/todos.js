@@ -15,10 +15,23 @@ function renderTodo(){
       var todoElement= document.createElement('li')
       var todoText= document.createTextNode(todo)
 
+      var linkElement= document.createElement('a')
+      linkElement.setAttribute('href', '#')
+
+      var pos= todos.indexOf(todo)
+      linkElement.setAttribute('onclick', 'excluirTodo('+ pos +')')
+
+      var linkText= document.createTextNode('Excluir')
+
+      linkElement.appendChild(linkText)
+
       todoElement.appendChild(todoText)
+      todoElement.appendChild(linkElement) //link
+
       listTodos.appendChild(todoElement)
    }
 }
+
 
 renderTodo()
 
@@ -32,3 +45,9 @@ function addTodo(){
 }
 
 button_todos.onclick= addTodo
+
+//Função para excluir o item
+function excluirTodo(pos){
+   todos.splice(pos, 1)
+   renderTodo()
+}
