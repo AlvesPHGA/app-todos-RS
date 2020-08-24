@@ -7,3 +7,15 @@ var todos= [
     "Ligar para o pai",
     "Fazer lista de compras"
 ]
+
+function renderTodo(){
+    for(todo of todos){
+        var todoElement= document.createElement('li')
+        var todoText= document.createTextNode(todo)
+
+        todoElement.appendChild(todoText)
+        listTodos.appendChild(todoElement)
+    }
+}
+
+renderTodo()
