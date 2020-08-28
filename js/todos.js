@@ -32,6 +32,10 @@ function renderTodo(){
 renderTodo()
 
 function addTodo(){
+
+   if(form_list.value == ""){
+      alert('Favor incluir uma tarefa')
+   } else{
    var todosText= form_list.value
 
    todos.push(todosText)
@@ -39,7 +43,7 @@ function addTodo(){
    form_list.value=''
    renderTodo()
    saveToStorage()
-}
+}}
 
 button_todos.onclick= addTodo
 

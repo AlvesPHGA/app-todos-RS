@@ -1,0 +1,140 @@
+:root{
+    --background: #ffffff;
+    --background-primary: #6200ee;
+    --background-variante: #3700b3;
+    --background-secondary: #bb86fc;
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+
+    font-size: 60%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 90vw;
+    height: 100vh;
+}
+
+body{
+    color: var(--color-primary);
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: decimal;
+}
+
+#container-body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    font-size: 2rem;    
+}
+
+.container .header{
+    height: 5rem;
+    background: var(--background-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.section-todos{
+   background: var(--background);
+   color: var(--color-primary);
+}
+
+.container .list{
+   margin: 5px 0;
+   text-align: center;
+   font-weight: 400;
+   width: 100%;
+}
+
+.list ul{
+   text-align: left;
+   padding: 5px;
+   font-size: 1.5rem;
+}
+
+.list ul li{
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.list ul li:hover{
+    background: rgba(210, 179, 255, 0.5);
+}
+
+.list ul li a{
+    margin-left: 5px;
+}
+
+.section-todos .form-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.section-todos .form-list input{
+    height: 3rem;
+    font-size: large;
+    padding: 3px;
+}
+
+.section-todos .form-list button{
+    height: 3rem;
+    font-size: large;
+    padding: 3px;
+}
+
+@media(min-width: 700px){
+    :root{
+        font-size: 90%;
+    }
+
+    body{
+        font-size: 4rem;
+    }
+
+    .section-todos{
+        max-width: 1200px;
+        margin: 10px auto;
+    }
+
+    .section-todos .form-list{
+      width: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+  }
+  
+  .section-todos .form-list input{
+      height: 3rem;
+      font-size: large;
+      width: 250px;
+  }
+  
+  .section-todos .form-list button{
+      height: 3rem;
+      font-size: large;
+      padding: 3px;
+      width: 100px;
+  }
+}
